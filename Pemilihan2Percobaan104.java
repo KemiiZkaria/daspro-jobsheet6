@@ -8,10 +8,13 @@ public class Pemilihan2Percobaan104 {
         int tahun = input04.nextInt();
 
         if ((tahun % 4) == 0) {
-            if ((tahun % 100) != 0) {
+            if ((tahun % 100) == 0) {
+                if ((tahun % 400) == 0) {
+                    System.out.println("Tahun " + tahun + " merupakan tahun kabisat");
+                } else
+                    System.out.println("Tahun " + tahun + " bukan tahun kabisat");
+            } else
                 System.out.println("Tahun " + tahun + " merupakan tahun kabisat");
-            }
-            else System.out.println("Tahun " + tahun + " bukan tahun kabisat");
         } else
             System.out.println("Tahun " + tahun + " bukan tahun kabisat");
     }
