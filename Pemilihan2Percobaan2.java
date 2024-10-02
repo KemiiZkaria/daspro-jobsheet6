@@ -4,8 +4,8 @@ public class Pemilihan2Percobaan2 {
     public static void main(String[] args) {
         Scanner input04 = new Scanner(System.in);
 
-        String member;
-        double menu, harga, totalBayar, jumlahBeli;
+        String member, metodePembayaran;
+        double menu, harga, totalBayar = 0, jumlahBeli, totalAkhir = 0, potonganQris = 1000;
 
         System.out.println("-------------------------");
         System.out.println("===== MENU KAFE JTI =====");
@@ -15,7 +15,7 @@ public class Pemilihan2Percobaan2 {
         System.out.println("3. Paket Bundling (Ricebowl + Ice Tea)");
         System.out.println("--------------------------------------");
         
-        System.out.print("Masukkan angka dari menu yang dipilih: ");
+        System.out.print("Masukkan angka dari menu yang dipilih = ");
         menu = input04.nextInt();
         input04.nextLine();
         System.out.print("Masukkan jumlah pembelian = ");
@@ -25,7 +25,7 @@ public class Pemilihan2Percobaan2 {
         member = input04.nextLine();
         System.out.println("--------------------------------------");
 
-        if (member.equalsIgnoreCase("y")) {
+        if (member.equals("y")) {
             double diskon = 0.1;
             System.out.println("Besar diskon = 10%");
             if (menu == 1) {
@@ -47,7 +47,7 @@ public class Pemilihan2Percobaan2 {
             totalBayar = harga - (harga * diskon) * jumlahBeli;
             System.out.println("Total bayar setelah diskon = " + totalBayar);
         }
-        else if (member.equalsIgnoreCase("n")){
+        else if (member.equals("n")){
             if (menu == 1) {
                 harga = 14000;
                 System.out.println("Harga ricebowl = " + harga);
@@ -70,6 +70,17 @@ public class Pemilihan2Percobaan2 {
         else{
             System.out.println("Member tidak valid");
         }
+        System.out.println("--------------------------------------");
+
+        System.out.print("Masukkan metode pembayaran (QRIS/Cash) = ");
+        metodePembayaran = input04.nextLine();
+
+        if (metodePembayaran.equalsIgnoreCase("QRIS")) {
+            totalAkhir = totalBayar - potonganQris;
+            System.out.println("Potongan sebesar 1000 dengan jenis pembayaran QRIS");
+        }
+
+        System.out.println("Total yang harus dibayar = " + totalAkhir );
         System.out.println("--------------------------------------");
     }
 }
