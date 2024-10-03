@@ -78,9 +78,16 @@ public class Pemilihan2Percobaan204 {
         if (metodePembayaran.equalsIgnoreCase("QRIS")) {
             totalAkhir = totalBayar - potonganQris;
             System.out.println("Potongan sebesar 1000 dengan jenis pembayaran QRIS");
+            System.out.println("Total yang harus dibayar = " + totalAkhir );
+            System.out.println("--------------------------------------");
         }
-
-        System.out.println("Total yang harus dibayar = " + totalAkhir );
-        System.out.println("--------------------------------------");
+        else if (metodePembayaran.equalsIgnoreCase("cash")) {
+            System.out.println("Total yang harus dibayar = " + totalBayar);
+            System.out.println("--------------------------------------");
+        }
+        else{
+            System.out.println("Jenis pembayaran invalid");
+            System.out.println("--------------------------------------");
+        }
     }
 }
