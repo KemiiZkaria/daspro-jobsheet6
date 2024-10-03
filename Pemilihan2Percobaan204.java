@@ -44,7 +44,7 @@ public class Pemilihan2Percobaan204 {
                 System.out.println("Masukkan pilhan menu dengan  benar");
                 return;
             }
-            totalBayar = harga - (harga * diskon) * jumlahBeli;
+            totalBayar = harga * jumlahBeli - ((harga * jumlahBeli) * diskon);
             System.out.println("Total bayar setelah diskon = " + totalBayar);
         }
         else if (member.equals("n")){
